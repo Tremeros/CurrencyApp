@@ -9,7 +9,7 @@ How to install and run application:
 
 initialize local repository on your machine using git.init
 
-Clone remote repository using git clone https://github.com/Tremeros/CurrencyConverter.git
+Clone remote repository using git clone https://github.com/Tremeros/CurrencyApp
 
 Enter application folder cd CurrencyConverter
 
