@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_LATEST, SET_FROM, SET_TO, FETCH_LATEST_QUOTES, ERROR } from './types';
+import { SET_FROM, SET_TO, FETCH_LATEST_QUOTES, ERROR } from './types';
 
 
 

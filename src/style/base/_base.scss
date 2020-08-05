@@ -14,4 +14,36 @@ body {
   box-sizing: border-box;
   padding: 1rem;
   background-color: $backgroundColor;
+  font-family: "Lato", sans-serif;
+}
+
+
+@media (max-width: 321px) {
+  html {
+    font-size: 31.25%;
+  }
+}
+
+@media (min-width: 322px) and (max-width: 426px) {
+  html {
+    font-size: 31.25%;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 769px)  {
+  html {
+    font-size: 37.6%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1441px)  {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (min-width: 10442px) and (max-width: 2561px)  {
+  html {
+    font-size: 87.5%;
+  }
 }

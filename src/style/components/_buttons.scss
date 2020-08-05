@@ -1,11 +1,13 @@
 .btn {
   width: 10rem;
   height: 4rem;
+  padding: 0.5rem;
   border-radius: 10rem;
   border: none;
   box-shadow: 0 0.5rem 1rem $blackColor;
   transition: all 0.2s;
   cursor: pointer;
+  font-size: 1.3rem;
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -18,5 +20,29 @@
   &:active {
     transform: translateY(-0.1rem);
     box-shadow: 0 0.5rem 1rem rgba($blackColor, 0.5);
+  }
+}
+
+@media (max-width: 321px) {
+  .btn {
+    width: 20rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 322px) and (max-width: 426px) {
+  .btn {
+    width: 20rem;
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 769px) {
+  .btn {
+    width: 20rem;
+    height: 5rem;
+    font-size: 2.5rem;
   }
 }

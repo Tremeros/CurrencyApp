@@ -44,19 +44,13 @@ class _App extends React.Component {
                     <label>To</label>
                     <Select function={this.props.setToCurrency}/>
                   </div>
-                  <button className='btn' onClick={this.fetchData}>Check</button>
+                  <button className='btn' onClick={this.fetchData}>Check course</button>
                 </div>
-                
-                  
-                  <Exchange>{this.state.quote}</Exchange>
-               
-                
+                <Exchange>{this.state.quote}</Exchange>
                 <Counter/>
-               
-                <Error/>
-                {this.props.from !== '' && <LatestQuotesList/>}
               </div>
-       
+              <Error/>
+              {this.props.from !== '' && <LatestQuotesList/>}
             </div>
         )
     }
@@ -67,7 +61,8 @@ const mapStateToProps = state => {
    from: state.exchange.from,
    to: state.exchange.to,
    quote: state.exchange.quote,
-   latest: state.exchange.latest
+   latest: state.exchange.latest,
+   
  }
 }
 

@@ -12,10 +12,11 @@ const _Counter = props => {
   }
 
     return (
-        <div>
-            <label>How many</label>
-            <input type='text' onChange={e => onChangeHandle(e)}></input>
-            <h2>{amount === 0 ? 'How many?' : amount * Object.values(props.quote.rates)}</h2>
+        <div className='main__counter'>
+            <label>How much do You want to exchange?</label>
+            <input className='counter__input' type='text' onChange={e => onChangeHandle(e)}></input>
+            <span>You will get</span>
+            <h2>{amount === 0 ? 'Check' : parseFloat(amount * Object.values(props.quote.rates)).toFixed(4) }</h2>
             
         </div>
     )

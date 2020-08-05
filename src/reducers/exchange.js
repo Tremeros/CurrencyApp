@@ -9,11 +9,11 @@ export const exchangeReducer = (state = initialState, action) => {
         case SET_TO:
             return {...state, to: action.payload, isFetching: false}
         case FETCH_LATEST:
-           return {...state, quote: action.payload, isfetching: false}
+           return {...state, quote: action.payload, isFetching: false}
         case FETCH_LATEST_QUOTES:
-            return {...state, latest: action.payload};
+            return {...state, latest: action.payload, isFetching: false};
         case ERROR:
-            return {...state, error: action.payload}
+            return {...state, error: action.payload, idFetching: false}
         default:
             return state;
     }

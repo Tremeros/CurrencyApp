@@ -1,11 +1,9 @@
 .main {
     &__selectForm {
+        @include formStyling;
         width: 30rem;
-        background-color: $secondaryColor;
         padding: 1rem 2rem;
-        border-radius: 30px;
-        box-shadow: 0 1.5rem 4rem $blackColor;
-        text-align: center;
+       
 
         span {
             color: $whiteColor;
@@ -31,3 +29,69 @@
        }
     }
 }
+
+@media (max-width: 321px) {
+    .main {
+        &__selectForm {
+            width: 50rem;
+            height: 30rem;
+
+            span {
+                font-size: 4rem;
+            }
+
+            label {
+                font-size: 4rem;
+            }
+
+            .select {
+                width: 12rem;
+                height: 5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 322px) and (max-width: 426px) {
+    .main {
+        &__selectForm {
+            width: 50rem;
+            height: 30rem;
+
+            span {
+                font-size: 4rem;
+            }
+
+            label {
+                font-size: 4rem;
+            }
+
+            .select {
+                width: 12rem;
+                height: 5rem;
+            }
+        }
+    }
+  }
+
+  @media (min-width: 427px) and (max-width: 769px) {
+    .main {
+        &__selectForm {
+            width: 50rem;
+            height: 30rem;
+
+            span {
+                font-size: 4rem;
+            }
+
+            label {
+                font-size: 4rem;
+            }
+
+            .select {
+                width: 12rem;
+                height: 5rem;
+            }
+        }
+    }
+  }

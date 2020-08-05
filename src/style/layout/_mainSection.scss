@@ -1,9 +1,10 @@
 .main {
     max-width: 100vw;
-    height: 50vh;
+    height: 80vh;
     background: linear-gradient($primaryColorDark, $primaryColorLight);
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
     h1 {
@@ -31,3 +32,57 @@
        }
    }
 }
+
+@media (max-width: 321px) {
+    .main {
+        h1 {
+            font-size: 8rem;
+        }
+
+        &__exchange {
+            h2 {
+                font-size: 3rem;
+            }
+
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+  }
+
+  @media (min-width: 322px) and (max-width: 426px) {
+    .main {
+        h1 {
+            font-size: 8rem;
+        }
+
+        &__exchange {
+            h2 {
+                font-size: 3rem;
+            }
+
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+  }
+
+  @media (min-width: 427px) and (max-width: 769px) {
+    .main {
+        h1 {
+            font-size: 8rem;
+        }
+
+        &__exchange {
+            h2 {
+                font-size: 3rem;
+            }
+
+            span {
+                font-size: 3rem;
+            }
+        }
+    }
+  }

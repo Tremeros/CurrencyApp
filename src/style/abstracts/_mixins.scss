@@ -1,0 +1,6 @@
+@mixin formStyling {
+    background-color: $secondaryColor;
+    border-radius: 3rem;
+    box-shadow: 0 1.5rem 4rem $blackColor;
+    text-align: center;
+}

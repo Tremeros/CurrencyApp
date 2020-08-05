@@ -1,0 +1,10 @@
+.errors {
+    max-width: 100%;
+    text-align: center;
+
+    p {
+        font-size: 3rem;
+        color: $errorColor;
+        margin-top: 1rem;
+    }
+}
