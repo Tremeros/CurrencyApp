@@ -12,7 +12,7 @@ export const Select = (props) => {
 
     return (
         <div>
-            <select onChange={e => onHandleChange(e)}>
+            <select className='select' onChange={e => onHandleChange(e)}>
                     <option value=''>-</option>
                     <option value='AUD'>AUD</option>
                     <option value='BGN'>BGN</option>

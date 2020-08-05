@@ -6,6 +6,7 @@ import {Select} from './select';
 import {Exchange} from './Exchange';
 import {Counter} from './Counter';
 import {LatestQuotesList} from './LatestQuotesList';
+import {Error} from './alerts/Error';
 
 
 class _App extends React.Component {
@@ -14,42 +15,47 @@ class _App extends React.Component {
     fetchData = async () => {
       if(this.props.from && this.props.to && this.props.from !== '' && this.props.to !== "") {
         await this.props.fetchLatest(this.props.from, this.props.to);
-        this.setState({quote: Object.values(this.props.quote.rates)});
+        const quote = parseFloat(Object.values(this.props.quote.rates)).toFixed(4);
+        this.setState({quote: quote });
+        console.log();
         await this.props.fetchLatestQuotes(this.props.from);
       }
-      
-      
-      console.log(this.props.from);
-      console.log(this.props.to);
-      
     }
 
     componentDidMount() {
       this.props.fetchLatest('USD', 'EUR');
-      console.log(this.props.all)
+ 
     }
 
-   
-
-   
-  
-    
-   
 
     render() {
         
         return (
             <div>
-              <h1>Currency app</h1>
-              <Select function={this.props.setFromCurrency}/>
-              <Select function={this.props.setToCurrency}/>
-              
-              <h2>{this.props.from && this.props.from}</h2>
-              <h2>{this.props.to && this.props.to}</h2>
-              {this.props.from && this.props.to ? <Exchange>{this.state.quote}</Exchange> : 'Choose currency'}
-              <Counter/>
-              <button onClick={this.fetchData}>Fetch</button>
-              {this.props.from !== '' && <LatestQuotesList/>}
+              <div className='main'>
+                <h1>Currency app</h1>
+                <div className='main__selectForm'>
+                  <span>Choose pair</span>
+                  <div className='main__selectForm__input'>
+                    <label>From</label>
+                    <Select function={this.props.setFromCurrency}/>
+                  </div>
+                  <div className='main__selectForm__input'>
+                    <label>To</label>
+                    <Select function={this.props.setToCurrency}/>
+                  </div>
+                  <button className='btn' onClick={this.fetchData}>Check</button>
+                </div>
+                
+                  
+                  <Exchange>{this.state.quote}</Exchange>
+               
+                
+                <Counter/>
+               
+                <Error/>
+                {this.props.from !== '' && <LatestQuotesList/>}
+              </div>
        
             </div>
         )

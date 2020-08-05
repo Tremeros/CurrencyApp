@@ -1,0 +1,33 @@
+.main {
+    max-width: 100vw;
+    height: 50vh;
+    background: linear-gradient($primaryColorDark, $primaryColorLight);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        color: $whiteColor;
+        font-size: 5rem;
+    }
+
+   &__exchange {
+       width: 50rem;
+       margin: 3rem 0;
+       padding: 1rem;
+       display: flex;
+       justify-content: space-between;
+      
+
+       h2 {
+           font-size: 2rem;;
+           color: $whiteColor;
+           align-self: center;
+       }
+       span {
+        font-size: 2rem;;
+        color: $whiteColor;
+        align-self: center;
+       }
+   }
+}

@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 
 const _Exchange = props => {
     return (
-        <div>
+        <div className='main__exchange'>
             <h2>Latest exchange course:</h2>
-            <h3>{props.children}</h3>
+            <span>{props.children}</span>
         </div>
     )
 }

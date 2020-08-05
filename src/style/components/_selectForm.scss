@@ -1,0 +1,33 @@
+.main {
+    &__selectForm {
+        width: 30rem;
+        background-color: $secondaryColor;
+        padding: 1rem 2rem;
+        border-radius: 30px;
+        box-shadow: 0 1.5rem 4rem $blackColor;
+        text-align: center;
+
+        span {
+            color: $whiteColor;
+            font-size: 2rem;
+        }
+       &__input {
+           display: flex;
+           justify-content: space-between;
+           margin: 2rem 0;
+
+           label {
+            color: $whiteColor;
+            font-size: 2rem;
+            margin-right: 2rem;
+        }
+
+            .select {
+                width: 10rem;
+                height: 3rem;
+                border-radius: 5px;
+            }
+
+       }
+    }
+}

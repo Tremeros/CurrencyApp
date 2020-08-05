@@ -10,10 +10,10 @@ export const exchangeReducer = (state = initialState, action) => {
             return {...state, to: action.payload, isFetching: false}
         case FETCH_LATEST:
            return {...state, quote: action.payload, isfetching: false}
-        case ERROR:
-               return {...state, error: action.payload}
         case FETCH_LATEST_QUOTES:
             return {...state, latest: action.payload};
+        case ERROR:
+            return {...state, error: action.payload}
         default:
             return state;
     }
