@@ -3,6 +3,8 @@ import React from 'react';
 
 export const Select = (props) => {
  
+
+
     const onHandleChange = e => {
         e.preventDefault();
         props.function(e.target.value);
@@ -11,6 +13,7 @@ export const Select = (props) => {
     return (
         <div>
             <select onChange={e => onHandleChange(e)}>
+                    <option value=''>-</option>
                     <option value='AUD'>AUD</option>
                     <option value='BGN'>BGN</option>
                     <option value='BRL'>BRL</option>
