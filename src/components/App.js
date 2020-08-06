@@ -17,7 +17,7 @@ class _App extends React.Component {
         await this.props.fetchLatest(this.props.from, this.props.to);
         const quote = parseFloat(Object.values(this.props.quote.rates)).toFixed(4);
         this.setState({quote: quote });
-        console.log();
+     
         await this.props.fetchLatestQuotes(this.props.from);
       }
     }

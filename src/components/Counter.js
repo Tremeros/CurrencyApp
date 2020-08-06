@@ -6,9 +6,9 @@ const _Counter = props => {
 
   const [amount, setAmount] = useState(0);
 
-  const onChangeHandle = e => {
-      setAmount(e.target.value);
-      console.log(Object.values(props.quote.rates));
+  const onChangeHandle = async e => {
+      await setAmount(e.target.value);
+      
   }
 
     return (
@@ -24,7 +24,8 @@ const _Counter = props => {
 
 const mapStateToProps = state => {
     return {
-      
+      from: state.exchange.from,
+      to: state.exchange.to,
       quote: state.exchange.quote
     }
    }

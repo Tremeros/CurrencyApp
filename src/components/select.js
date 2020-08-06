@@ -1,13 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchLatest} from '../actions/exchange';
+import {fetchLatestQuotes} from '../actions/latest';
 
-
-export const Select = (props) => {
+const _Select = (props) => {
  
 
 
-    const onHandleChange = e => {
-        e.preventDefault();
-        props.function(e.target.value);
+    const onHandleChange = async e => {
+        
+       await props.function(e.target.value);
+       props.fetchLatestQuotes(props.from);
+       props.fetchLatest(props.from, props.to);
+        
     }
 
     return (
@@ -52,5 +57,14 @@ export const Select = (props) => {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+      from: state.exchange.from,
+      to: state.exchange.to,
+      quote: state.exchange.quote
+    }
+   }
 
 
+
+export const Select = connect(mapStateToProps, {fetchLatest, fetchLatestQuotes})(_Select);
