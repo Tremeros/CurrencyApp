@@ -1,19 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {fetchLatest} from '../actions/exchange';
 
 
-export const Select = (props) => {
- 
+class _Select extends React.Component {
+   state ={currency: ''}
 
 
-    const onHandleChange = e => {
-      props.function(e.target.value);
-    
+    onHandleChange = async e => {
+        await this.setState({currency: e.target.value})
+      await this.props.function(this.state.currency);  
+       
     }
+    
 
+      render() {
     return (
         <div>
-            <select className='select' onChange={e => onHandleChange(e)}>
+            <select className='select' value={this.state.currency} onChange={e => this.onHandleChange(e)}>
                     <option value=''>-</option>
                     <option value='AUD'>AUD</option>
                     <option value='BGN'>BGN</option>
@@ -51,9 +55,20 @@ export const Select = (props) => {
             </select>
         </div>
     )
+      }
 }
 
+const mapStateToProps = state => {
+    return {
+      from: state.exchange.from,
+      to: state.exchange.to,
+      quote: state.exchange.quote,
+      latest: state.exchange.latest,
+      
+    }
+   }
 
+export const Select = connect(mapStateToProps, {fetchLatest})(_Select);
 
 
 

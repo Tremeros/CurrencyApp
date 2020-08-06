@@ -10,7 +10,7 @@ const _LatestQuotesList = props => {
                     
                     <thead>
                     <tr>
-                      <th>{`Latest quotes for ${props.from}`}</th>
+                      <th>{`Latest quotes for ${props.base}`}</th>
                       <th>Course</th>
                     </tr>
                 </thead>
@@ -35,6 +35,7 @@ const _LatestQuotesList = props => {
 
 const mapStateToProps = state => {
     return {
+        base: state.exchange.latest.base,
        latest: state.exchange.latest,
        from: state.exchange.from,
        fetching: state.exchange.isFetching
