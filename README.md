@@ -1,7 +1,7 @@
 CurrencyConverte is a simple SPA which allows you to check lates currency quotes (historical quotes will be implemented soon) and currency conversion.
 
 
-Link to deployed application: https://master.dd5wi3eosijuk.amplifyapp.com/
+Link to deployed application: https://master.d1jrljg14ioqt3.amplifyapp.com/
 
 
 
