@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchLatest} from '../actions/exchange';
-
+import {fetchLatestQuotes} from '../actions/latest';
 
 class _Select extends React.Component {
    state ={currency: ''}
@@ -10,7 +10,10 @@ class _Select extends React.Component {
     onHandleChange = async e => {
         await this.setState({currency: e.target.value})
       await this.props.function(this.state.currency);  
-       
+       if(this.props.to) {
+         this.props.fetchLatest(this.props.from, this.props.to);
+         this.props.fetchLatestQuotes(this.props.from);
+       }
     }
     
 
@@ -68,7 +71,7 @@ const mapStateToProps = state => {
     }
    }
 
-export const Select = connect(mapStateToProps, {fetchLatest})(_Select);
+export const Select = connect(mapStateToProps, {fetchLatest, fetchLatestQuotes})(_Select);
 
 
 
