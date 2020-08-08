@@ -6,6 +6,7 @@ import {Exchange} from './Exchange';
 import {Counter} from './Counter';
 import {LatestQuotesList} from './LatestQuotesList';
 import {Error} from './alerts/Error';
+import {Spinner} from './spinner/Spinner';
 
 
 class _App extends React.Component {
@@ -23,7 +24,8 @@ class _App extends React.Component {
         
         return (
             <div>
-              <div className='main'>
+              {this.props.fetching ? <Spinner/> : 
+                <div className='main'>
                 <h1>Currency app</h1>
                 <div className='main__selectForm'>
                   <span>Choose pair</span>
@@ -39,9 +41,10 @@ class _App extends React.Component {
                 </div>
                 <Exchange>{this.props.to && parseFloat(Object.values(this.props.quote.rates))}</Exchange>
                 <Counter/>
-              </div>
+              </div>}
               <Error/>
               {this.props.from !== '' && <LatestQuotesList/>}
+    
             </div>
         )
     }
@@ -53,7 +56,7 @@ const mapStateToProps = state => {
    to: state.exchange.to,
    quote: state.exchange.quote,
    latest: state.exchange.latest,
-   
+   fetching: state.exchange.isfetching
  }
 }
 
